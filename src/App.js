@@ -1,5 +1,5 @@
 import React from 'react'
 
-const App = () => <div>Localize Hub</div>
+const App = () => <div>Localize hub</div>
 
 export default App
