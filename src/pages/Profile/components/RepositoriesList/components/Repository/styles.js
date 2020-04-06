@@ -1,4 +1,5 @@
-import styled from '@xstyled/styled-components'
+import styled, { css } from '@xstyled/styled-components'
+import { down } from '@xstyled/system'
 
 export const Container = styled.div`
   height: 80px;
@@ -7,6 +8,13 @@ export const Container = styled.div`
   border-radius: 1;
   border: 1px solid #0a8c3c;
   background-color: #0a8c3c;
+
+  ${down(
+    'md',
+    css`
+      margin: 4 0 0 0;
+    `
+  )}
 `
 
 export const RepositoryInformations = styled.div`
@@ -60,4 +68,11 @@ export const RepositoryName = styled.span`
 export const RepositoryDescription = styled.span`
   font-size: 1;
   margin-bottom: 2;
+
+  ${down(
+    'md',
+    css`
+      display: none;
+    `
+  )}
 `

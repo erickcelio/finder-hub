@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 `
 
 export default GlobalStyle

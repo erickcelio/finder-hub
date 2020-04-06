@@ -1,4 +1,5 @@
-import styled from '@xstyled/styled-components'
+import styled, { css } from '@xstyled/styled-components'
+import { down } from '@xstyled/system'
 
 export const Container = styled.div`
   padding: 7;
@@ -12,6 +13,20 @@ export const Container = styled.div`
   &:hover {
     background-color: primary;
   }
+
+  ${down(
+    'md',
+    css`
+      padding: 4 0;
+      align-items: center;
+      justify-content: center;
+      max-height: unset;
+      margin: 0;
+      flex-wrap: wrap;
+      max-width: 100%;
+      text-align: center;
+    `
+  )}
 `
 
 export const UserAvatar = styled.img`
@@ -25,6 +40,14 @@ export const UserNameAndTagContainer = styled.div`
   margin-left: 5;
   display: flex;
   flex: 1;
+
+  ${down(
+    'md',
+    css`
+      margin: 5;
+      flex: 1 0 100%;
+    `
+  )}
 `
 
 export const UserName = styled.span`
