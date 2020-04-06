@@ -1896,6 +1896,16 @@
     "@babel/runtime" "^7.8.3"
     "@xstyled/system" "^1.17.0"
 
+"@xstyled/emotion@^1.17.0":
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/emotion/-/emotion-1.17.0.tgz#3986070473d96f0feb5aa99b347dedf854855031"
+  integrity sha512-eSojDINqKdv5s6KZHhXEac6o+uEBf6Oe3t+SQOCNzgkgCs4LGRHU7Eu/g9GnLCy7haEtyjaufeEnmKbBa6Oy5g==
+  dependencies:
+    "@babel/runtime" "^7.8.3"
+    "@xstyled/core" "^1.17.0"
+    "@xstyled/system" "^1.17.0"
+    "@xstyled/util" "^1.16.0"
+
 "@xstyled/styled-components@^1.17.0":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-1.17.0.tgz#c30aca56ad0c200ea08e7ea5a8f20bcdaf6bf41e"

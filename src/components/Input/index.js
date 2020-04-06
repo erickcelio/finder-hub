@@ -17,6 +17,7 @@ const Input = ({
   placeholder,
   type,
   name,
+  autocomplete,
 }) => (
   <Container>
     <StyledLabel>{label}</StyledLabel>
@@ -27,6 +28,7 @@ const Input = ({
         name={name}
         type={type}
         placeholder={placeholder}
+        autocomplete={autocomplete}
       />
       <InvalidMessage show={!isValid}>{invalidMessage}</InvalidMessage>
     </InputContainer>
@@ -42,6 +44,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
+  autocomplete: PropTypes.string,
 }
 
 Input.defaultProps = {
@@ -49,6 +52,7 @@ Input.defaultProps = {
   label: '',
   placeholder: '',
   type: 'text',
+  autocomplete: 'off',
   onChange: () => {},
 }
 

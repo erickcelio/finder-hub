@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 import {
   userHasErrorSelector,
   userHasLoadedWithSuccessSelector,
-  userIsLoadingSelector,
 } from 'store/modules/user/selectors'
 import Colors from 'assets/styles/colors'
 
@@ -24,7 +23,7 @@ export const Container = styled.div`
     fill: background;
     stroke-width: 0.1;
     stroke: ${Colors.black};
-    animation-duration: 6s;
+    animation-duration: 3s;
 
     ${(props) =>
       props.animateError &&

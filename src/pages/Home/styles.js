@@ -1,5 +1,6 @@
-import styled from '@xstyled/styled-components'
+import styled, { css } from '@xstyled/styled-components'
 import { Container as InputContainer } from 'components/Input/styles'
+import { down } from '@xstyled/system'
 
 export const Container = styled.div`
   width: 100%;
@@ -22,4 +23,13 @@ export const FormContainer = styled.div`
   ${InputContainer} {
     margin-top: 7;
   }
+
+  ${down(
+    'md',
+    css`
+      align-self: baseline;
+      background-color: transparent;
+      border: none;
+    `
+  )}
 `
