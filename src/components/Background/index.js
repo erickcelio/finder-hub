@@ -1,16 +1,13 @@
 import React from 'react'
 import { ReactComponent as BackgroundPattern } from 'assets/images/background-pattern.svg'
-import styled, { keyframes, css } from '@xstyled/styled-components'
-
-const blink = keyframes`
-  0% {
-    stroke: black;
-  }
-
-  100% {
-    stroke: red;
-  }
-`
+import styled, { css } from '@xstyled/styled-components'
+import { useSelector } from 'react-redux'
+import {
+  userHasErrorSelector,
+  userHasLoadedWithSuccessSelector,
+  userIsLoadingSelector,
+} from 'store/modules/user/selectors'
+import Colors from 'assets/styles/colors'
 
 export const Container = styled.div`
   z-index: -1;
@@ -26,21 +23,65 @@ export const Container = styled.div`
   polygon {
     fill: background;
     stroke-width: 0.1;
-    stroke: black;
-    animation: ${blink} 1s forwards;
+    stroke: ${Colors.black};
+    animation-duration: 6s;
 
     ${(props) =>
-      !props.animate &&
+      props.animateError &&
       css`
-        animation: none;
+        animation-name: blink-error;
+        animation-play-state: running;
       `}
+
+    ${(props) =>
+      props.animateSuccess &&
+      css`
+        animation-name: blink-success;
+        animation-play-state: running;
+      `}
+  }
+
+  @keyframes blink-error {
+    0% {
+      stroke: black;
+    }
+
+    50% {
+      stroke: ${Colors.red};
+    }
+
+    100% {
+      stroke: black;
+    }
+  }
+
+  @keyframes blink-success {
+    0% {
+      stroke: black;
+    }
+
+    50% {
+      stroke: ${Colors.malachite};
+    }
+
+    0% {
+      stroke: black;
+    }
   }
 `
 
-const Background = () => (
-  <Container>
-    <BackgroundPattern />
-  </Container>
-)
+const Background = () => {
+  const hasUserErrors = useSelector(userHasErrorSelector)
+  const hasUserLodedWithSuccess = useSelector(userHasLoadedWithSuccessSelector)
+
+  return (
+    <Container
+      animateError={hasUserErrors}
+      animateSuccess={hasUserLodedWithSuccess}
+    >
+      <BackgroundPattern />
+    </Container>
+  )
+}
 
 export default Background

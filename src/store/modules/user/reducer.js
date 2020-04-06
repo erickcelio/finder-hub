@@ -25,6 +25,7 @@ export default (state = initialState, action) => {
       return produce(state, (draft) => {
         draft.isLoading = true
         draft.hasLoaded = false
+        draft.error = {}
       })
 
     case USER_REQUEST_ERROR:

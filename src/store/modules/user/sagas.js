@@ -1,13 +1,20 @@
 import { takeLatest, put } from 'redux-saga/effects'
 import { USER_REQUEST_LOAD } from 'store/types'
-import { userIsLoadingAction, userRequestSuccessAction } from './actions'
+import {
+  userIsLoadingAction,
+  userRequestSuccessAction,
+  userRequestErrorAction,
+} from './actions'
+import { getUserByUsernameService } from 'services/user'
 
-function* loadUser() {
+function* loadUser({ username }) {
   yield put(userIsLoadingAction())
-
-  const user = {}
-
-  yield put(userRequestSuccessAction(user))
+  try {
+    const user = yield getUserByUsernameService(username)
+    yield put(userRequestSuccessAction(user))
+  } catch (e) {
+    yield put(userRequestErrorAction(e))
+  }
 }
 
 const locationSagas = [takeLatest(USER_REQUEST_LOAD, loadUser)]
