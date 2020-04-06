@@ -6,17 +6,21 @@ import Theme from 'assets/styles/theme'
 import Routes from 'routes'
 import { Router } from 'react-router-dom'
 import history from 'services/history'
+import { Provider } from 'react-redux'
+import store from 'store'
 
 export const Container = styled.div``
 
 const App = () => (
-  <ThemeProvider theme={Theme}>
-    <GlobalStyle />
-    <Container>Finder hub</Container>
-    <Router history={history}>
-      <Routes />
-    </Router>
-  </ThemeProvider>
+  <Provider store={store}>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyle />
+      <Container>Finder hub</Container>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </ThemeProvider>
+  </Provider>
 )
 
 export default App
