@@ -4,6 +4,6 @@ import App from './App'
 
 test('renders learn react link', () => {
   const { getByText } = render(<App />)
-  const linkElement = getByText(/Localize Hub/i)
+  const linkElement = getByText(/Finder Hub/i)
   expect(linkElement).toBeInTheDocument()
 })
