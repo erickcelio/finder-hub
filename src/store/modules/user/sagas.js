@@ -6,12 +6,14 @@ import {
   userRequestErrorAction,
 } from './actions'
 import { getUserByUsernameService } from 'services/user'
+import { repositoriesRequestLoadAction } from '../repositories/actions'
 
 function* loadUser({ username }) {
   yield put(userIsLoadingAction())
   try {
     const user = yield getUserByUsernameService(username)
     yield put(userRequestSuccessAction(user))
+    yield put(repositoriesRequestLoadAction({ username }))
   } catch (e) {
     yield put(userRequestErrorAction(e))
   }

@@ -18,3 +18,17 @@ export const getUserByUsernameService = async (username) => {
     throw error
   }
 }
+
+export const getUserRepositoriesByUsernameService = async (username) => {
+  try {
+    const { data } = await axios.get(`/users/${username}/repos`)
+
+    return data
+  } catch (e) {
+    const error = {
+      message: 'Ocorreu um erro por favor tente novamente!',
+    }
+
+    throw error
+  }
+}

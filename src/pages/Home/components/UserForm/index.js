@@ -3,6 +3,9 @@ import { useForm } from 'react-hook-form'
 import Input from 'components/Input'
 import Button from 'components/Button'
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
+import { userIsLoadingSelector } from 'store/modules/user/selectors'
+import { repositoriesIsLoadingSelector } from 'store/modules/repositories/selectors'
 
 const UserForm = ({ onSubmit }) => {
   const {
@@ -13,6 +16,9 @@ const UserForm = ({ onSubmit }) => {
     clearError,
     control,
   } = useForm()
+
+  const userIsLoading = useSelector(userIsLoadingSelector)
+  const repositoriesIsLoading = useSelector(repositoriesIsLoadingSelector)
 
   const handleBeforeSubmit = (values) => {
     validateUsername(values.username)
@@ -47,7 +53,12 @@ const UserForm = ({ onSubmit }) => {
         invalidMessage={errors.username && errors.username.message}
         placeholder="Insira seu @ do GitHub"
       />
-      <Button onClick={handleSubmit(handleBeforeSubmit)}>Localizar</Button>
+      <Button
+        isLoading={userIsLoading || repositoriesIsLoading}
+        onClick={handleSubmit(handleBeforeSubmit)}
+      >
+        Localizar
+      </Button>
     </>
   )
 }

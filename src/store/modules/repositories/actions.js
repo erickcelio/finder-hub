@@ -5,9 +5,9 @@ import {
   REPOSITORIES_REQUEST_LOAD,
 } from 'store/types'
 
-export const repositoriesRequestLoadAction = (user) => ({
+export const repositoriesRequestLoadAction = ({ username }) => ({
   type: REPOSITORIES_REQUEST_LOAD,
-  user,
+  username,
 })
 
 export const repositoriesRequestSuccessAction = (data) => ({
