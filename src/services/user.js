@@ -23,7 +23,7 @@ export const getUserRepositoriesByUsernameService = async (username) => {
   try {
     const { data } = await axios.get(`/users/${username}/repos`)
 
-    return data
+    return sortUserRepositoriesBasedOnStars(data)
   } catch (e) {
     const error = {
       message: 'Ocorreu um erro por favor tente novamente!',
@@ -32,3 +32,8 @@ export const getUserRepositoriesByUsernameService = async (username) => {
     throw error
   }
 }
+
+const sortUserRepositoriesBasedOnStars = (repositories) =>
+  repositories.sort((a, b) =>
+    a.stargazers_count > b.stargazers_count ? -1 : 1
+  )
