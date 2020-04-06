@@ -5,6 +5,7 @@ const Colors = {
   mirage: '#161B33',
   malachite: '#0DB14B',
   pastelGreen: '#66E3A6',
+  red: '#C83E3E',
 }
 
 export default Colors
