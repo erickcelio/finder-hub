@@ -8,12 +8,14 @@ import { Router } from 'react-router-dom'
 import history from 'services/history'
 import { Provider } from 'react-redux'
 import store from 'store'
+import Background from 'components/Background'
 
 export const Container = styled.div``
 
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={Theme}>
+      <Background />
       <GlobalStyle />
       <Container>Finder hub</Container>
       <Router history={history}>
