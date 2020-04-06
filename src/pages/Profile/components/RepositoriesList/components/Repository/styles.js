@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   border-radius: 1;
   border: 1px solid;
-  border-color: primary;
+  border-color: white;
 `
 
 export const RepositoryInformations = styled.div`
@@ -26,7 +26,7 @@ export const RepositoryLink = styled.a`
   justify-content: center;
   padding: 0 4;
   border-left: 1px solid;
-  border-color: primary;
+  border-color: white;
   cursor: pointer;
 
   &:hover {

@@ -6,11 +6,13 @@ export const Container = styled.div`
   display: flex;
   margin-top: 8;
   border-radius: 1;
-  border: 1px solid;
   max-height: 145px;
   align-items: center;
-  border-color: malachite;
-  background-color: background;
+  background-color: primary;
+
+  &:hover {
+    background-color: primary;
+  }
 `
 
 export const UserAvatar = styled.img`
