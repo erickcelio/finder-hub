@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from '@xstyled/styled-components'
 import { ThemeProvider } from 'styled-components'
-import theme from './assets/styles/theme'
-import GlobalStyle from './assets/styles/globalStyle'
+import GlobalStyle from 'assets/styles/globalStyle'
+import Theme from 'assets/styles/theme'
 
 export const Container = styled.div``
 
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={Theme}>
     <GlobalStyle />
     <Container>Finder hub</Container>
   </ThemeProvider>

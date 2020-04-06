@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
   white: '#fff',
   black: '#000',
   mineShaft: '#212121',
@@ -6,3 +6,5 @@ export const Colors = {
   malachite: '#0DB14B',
   pastelGreen: '#66E3A6',
 }
+
+export default Colors

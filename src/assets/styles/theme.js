@@ -1,6 +1,6 @@
-import { Colors } from './colors'
+import Colors from './colors'
 
-const theme = {
+const Theme = {
   colors: {
     ...Colors,
     background: Colors.mirage,
@@ -18,4 +18,4 @@ const theme = {
   radii: [0, 4, 8, 16, 32],
 }
 
-export default theme
+export default Theme
