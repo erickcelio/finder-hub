@@ -6,18 +6,21 @@ import Routes from 'routes'
 import { Router } from 'react-router-dom'
 import history from 'services/history'
 import { Provider } from 'react-redux'
-import store from 'store'
+import { store, persistor } from './store'
 import Background from 'components/Background'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const App = () => (
   <Provider store={store}>
-    <ThemeProvider theme={Theme}>
-      <Background />
-      <GlobalStyle />
-      <Router history={history}>
-        <Routes />
-      </Router>
-    </ThemeProvider>
+    <PersistGate loading={null} persistor={persistor}>
+      <ThemeProvider theme={Theme}>
+        <Background />
+        <GlobalStyle />
+        <Router history={history}>
+          <Routes />
+        </Router>
+      </ThemeProvider>
+    </PersistGate>
   </Provider>
 )
 

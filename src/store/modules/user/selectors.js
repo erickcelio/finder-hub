@@ -3,6 +3,11 @@ import { isEmpty } from 'lodash'
 
 export const userSelector = (state) => state.user
 
+export const userDataSelector = createSelector(
+  userSelector,
+  (user) => user.data
+)
+
 export const userIsLoadingSelector = createSelector(
   userSelector,
   (user) => user.isLoading
