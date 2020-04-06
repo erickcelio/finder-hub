@@ -3,6 +3,11 @@ import { isEmpty } from 'lodash'
 
 export const repositoriesSelector = (state) => state.repositories
 
+export const repositoriesDataSelector = createSelector(
+  repositoriesSelector,
+  (repositories) => repositories.data
+)
+
 export const repositoriesIsLoadingSelector = createSelector(
   repositoriesSelector,
   (repositories) => repositories.isLoading

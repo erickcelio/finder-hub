@@ -5,7 +5,10 @@ import { repositoriesHasLoadedSelector } from 'store/modules/repositories/select
 import history from 'services/history'
 import ROUTER_PATHS from 'constants/router'
 
-// import { Container } from './styles';
+import { Container } from './styles'
+import { Logo } from 'assets/styles'
+import UserProfile from './components/UserProfile'
+import RepositoriesList from './components/RepositoriesList'
 
 const Profile = () => {
   const userHasLoaded = useSelector(userHasLoadedSelector)
@@ -17,7 +20,13 @@ const Profile = () => {
     }
   }, [userHasLoaded, repositoriesHasLoaded])
 
-  return <div>asdas</div>
+  return (
+    <Container>
+      <Logo />
+      <UserProfile />
+      <RepositoriesList />
+    </Container>
+  )
 }
 
 export default Profile
