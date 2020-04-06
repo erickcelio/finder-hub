@@ -35,7 +35,7 @@ export const Dot = styled.div`
     }
 
     50% {
-      transform: translateY(10px);
+      transform: translateY(5px);
     }
   }
 `

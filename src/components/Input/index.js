@@ -8,30 +8,48 @@ import {
   InputContainer,
 } from './styles'
 
-const Input = ({ isValid, invalidMessage, label, placeholder, type }) => (
+const Input = ({
+  onChange,
+  inputRef,
+  isValid,
+  invalidMessage,
+  label,
+  placeholder,
+  type,
+  name,
+}) => (
   <Container>
     <StyledLabel>{label}</StyledLabel>
     <InputContainer valid={isValid}>
-      <StyledInput type={type} placeholder={placeholder} />
+      <StyledInput
+        onChange={(e) => onChange(e.target.value)}
+        ref={inputRef}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+      />
       <InvalidMessage show={!isValid}>{invalidMessage}</InvalidMessage>
     </InputContainer>
   </Container>
 )
 
 Input.propTypes = {
+  onChange: PropTypes.func,
+  inputRef: PropTypes.any,
   invalidMessage: PropTypes.string,
   isValid: PropTypes.bool,
   label: PropTypes.string,
   placeholder: PropTypes.string,
   type: PropTypes.string,
+  name: PropTypes.string.isRequired,
 }
 
 Input.defaultProps = {
   invalidMessage: '',
-  isValid: true,
   label: '',
   placeholder: '',
   type: 'text',
+  onChange: () => {},
 }
 
 export default Input

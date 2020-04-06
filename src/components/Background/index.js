@@ -1,6 +1,16 @@
 import React from 'react'
 import { ReactComponent as BackgroundPattern } from 'assets/images/background-pattern.svg'
-import styled from '@xstyled/styled-components'
+import styled, { keyframes, css } from '@xstyled/styled-components'
+
+const blink = keyframes`
+  0% {
+    stroke: black;
+  }
+
+  100% {
+    stroke: red;
+  }
+`
 
 export const Container = styled.div`
   z-index: -1;
@@ -16,7 +26,14 @@ export const Container = styled.div`
   polygon {
     fill: background;
     stroke-width: 0.1;
-    stroke: #000;
+    stroke: black;
+    animation: ${blink} 1s forwards;
+
+    ${(props) =>
+      !props.animate &&
+      css`
+        animation: none;
+      `}
   }
 `
 
