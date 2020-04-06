@@ -20,6 +20,6 @@ export const FormContainer = styled.div`
   background-color: rgba(22, 27, 51, 0.8);
 
   ${InputContainer} {
-    margin-top: 9;
+    margin-top: 7;
   }
 `

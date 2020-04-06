@@ -1,53 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import Input from 'components/Input'
 import Button from 'components/Button'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import { userIsLoadingSelector } from 'store/modules/user/selectors'
+import {
+  userIsLoadingSelector,
+  userHasErrorSelector,
+  userErrorSelector,
+} from 'store/modules/user/selectors'
 import { repositoriesIsLoadingSelector } from 'store/modules/repositories/selectors'
 
 const UserForm = ({ onSubmit }) => {
-  const {
-    register,
-    errors,
-    handleSubmit,
-    setError,
-    clearError,
-    control,
-  } = useForm()
+  const { register, errors, handleSubmit, setError } = useForm()
 
   const userIsLoading = useSelector(userIsLoadingSelector)
   const repositoriesIsLoading = useSelector(repositoriesIsLoadingSelector)
+  const userHasError = useSelector(userHasErrorSelector)
+  const userError = useSelector(userErrorSelector)
 
   const handleBeforeSubmit = (values) => {
-    validateUsername(values.username)
-    if (control.formState.isValid) {
-      onSubmit(values)
-    }
+    onSubmit(values)
   }
 
-  const validateUsername = (username = '') => {
-    const isValid = username.length > 0
-    if (!isValid) {
+  useEffect(() => {
+    if (userHasError) {
       setError([
         {
-          type: 'required',
           name: 'username',
-          message: 'Por favor preencha este campo!',
+          message: userError.message,
         },
       ])
-    } else {
-      clearError('username')
     }
-    return isValid
-  }
+  }, [userHasError])
 
   return (
     <>
       <Input
-        onChange={validateUsername}
-        inputRef={register}
+        inputRef={register({
+          required: 'Por favor preencha este campo!',
+        })}
         name="username"
         isValid={!errors.username}
         invalidMessage={errors.username && errors.username.message}

@@ -5,8 +5,8 @@ export const Container = styled.div`
   margin: 4 3 0 3;
   display: flex;
   border-radius: 1;
-  border: 1px solid;
-  border-color: white;
+  border: 1px solid #0a8c3c;
+  background-color: #0a8c3c;
 `
 
 export const RepositoryInformations = styled.div`

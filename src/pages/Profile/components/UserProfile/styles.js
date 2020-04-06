@@ -9,7 +9,6 @@ export const Container = styled.div`
   max-height: 145px;
   align-items: center;
   background-color: primary;
-
   &:hover {
     background-color: primary;
   }
