@@ -1,12 +1,11 @@
 import React from 'react'
-import Button from 'components/Button'
-
-// import { Container } from './styles';
+import { Container } from './styles'
+import { Logo } from 'assets/styles'
 
 const Home = () => (
-  <div>
-    Home <Button>Localizar</Button>
-  </div>
+  <Container>
+    <Logo />
+  </Container>
 )
 
 export default Home
