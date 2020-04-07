@@ -5,7 +5,7 @@ export const repositoriesSelector = (state) => state.repositories
 
 export const repositoriesDataSelector = createSelector(
   repositoriesSelector,
-  (repositories) => repositories.data
+  (repositories) => repositories.data || []
 )
 
 export const repositoriesIsLoadingSelector = createSelector(

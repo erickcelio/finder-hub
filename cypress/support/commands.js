@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('enterUser', (user) => {
+  cy.visit('/')
+  cy.get('[name=username]').type(user)
+  cy.contains('Localizar').click()
+})
+
+Cypress.Commands.add('getByTestId', (name) => cy.get(`[data-testid="${name}"]`))

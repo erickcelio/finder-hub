@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <Container>
-      <FormContainer>
+      <FormContainer data-testid="user-form">
         <Logo />
         <UserForm onSubmit={handleFormSubmit} />
       </FormContainer>

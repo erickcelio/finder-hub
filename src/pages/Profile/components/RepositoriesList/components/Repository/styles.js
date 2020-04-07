@@ -13,7 +13,7 @@ export const RepositoryLink = styled.a`
   justify-content: center;
 `
 
-export const Container = styled.div`
+export const Container = styled.li`
   padding: 4;
   display: flex;
   margin: 4 3 0 3;

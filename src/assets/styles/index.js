@@ -14,6 +14,10 @@ export const Container = styled.div`
 
 export const Logo = () => (
   <Container>
-    <LogoImg id="logo" onClick={() => history.push(ROUTER_PATHS.HOME)} />
+    <LogoImg
+      id="logo"
+      data-testid="logo"
+      onClick={() => history.push(ROUTER_PATHS.HOME)}
+    />
   </Container>
 )

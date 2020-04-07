@@ -14,27 +14,29 @@ import {
 } from './styles'
 import PropTypes from 'prop-types'
 
-const Repository = ({ name, description, starts, forks, watchers, url }) => (
-  <Container>
+const Repository = ({ name, description, stars, forks, watchers, url }) => (
+  <Container id="repository">
     <RepositoryInformations>
-      <RepositoryName>{name}</RepositoryName>
-      <RepositoryDescription>{description}</RepositoryDescription>
+      <RepositoryName id="repository-name">{name}</RepositoryName>
+      <RepositoryDescription id="repository-description">
+        {description}
+      </RepositoryDescription>
       <RepositoryStatus>
-        <Status>
+        <Status id="repository-stars">
           <StarIcon />
-          {starts}
+          {stars}
         </Status>
-        <Status>
+        <Status id="repository-watchers">
           <EyeIcon />
           {watchers}
         </Status>
-        <Status>
+        <Status id="repository-forks">
           <BranchIcon />
           {forks}
         </Status>
       </RepositoryStatus>
     </RepositoryInformations>
-    <RepositoryLink href={url} target="_blank">
+    <RepositoryLink id="repository-link" href={url} target="_blank">
       <ArrowRightIcon />
     </RepositoryLink>
   </Container>
@@ -44,7 +46,7 @@ Repository.propTypes = {
   name: PropTypes.string,
   url: PropTypes.string,
   description: PropTypes.string,
-  starts: PropTypes.number,
+  stars: PropTypes.number,
   forks: PropTypes.number,
   watchers: PropTypes.number,
 }

@@ -17,18 +17,18 @@ const UserProfile = () => {
   const user = useSelector(userDataSelector)
 
   return (
-    <Container>
-      <UserAvatar src={user.avatar_url} />
+    <Container id="user-profile">
+      <UserAvatar id="user-avatar" src={user.avatar_url} />
       <UserNameAndTagContainer>
-        <UserName>{user.name}</UserName>
-        <UserBio>{user.email}</UserBio>
-        <UserEmail>{user.bio}</UserEmail>
+        <UserName id="user-name">{user.name}</UserName>
+        <UserBio id="user-bio">{user.email}</UserBio>
+        <UserEmail id="user-email">{user.bio}</UserEmail>
       </UserNameAndTagContainer>
-      <UserStatsContainer>
+      <UserStatsContainer id="user-followers">
         <UserStatsName>Seguidores</UserStatsName>
         <UserStatsValue>{user.followers}</UserStatsValue>
       </UserStatsContainer>
-      <UserStatsContainer>
+      <UserStatsContainer id="user-following">
         <UserStatsName>Seguindo</UserStatsName>
         <UserStatsValue>{user.following}</UserStatsValue>
       </UserStatsContainer>
