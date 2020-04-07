@@ -5,7 +5,8 @@ import {
   UserAvatar,
   UserNameAndTagContainer,
   UserName,
-  UserTag,
+  UserBio,
+  UserEmail,
   UserStatsContainer,
   UserStatsName,
   UserStatsValue,
@@ -20,7 +21,8 @@ const UserProfile = () => {
       <UserAvatar src={user.avatar_url} />
       <UserNameAndTagContainer>
         <UserName>{user.name}</UserName>
-        <UserTag>@{user.login}</UserTag>
+        <UserBio>{user.email}</UserBio>
+        <UserEmail>{user.bio}</UserEmail>
       </UserNameAndTagContainer>
       <UserStatsContainer>
         <UserStatsName>Seguidores</UserStatsName>

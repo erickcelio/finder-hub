@@ -14,7 +14,7 @@ export const InputContainer = styled.div`
   ${(props) =>
     props.valid
       ? css`
-          border-color: malachite;
+          border-color: primary;
         `
       : css`
           border-color: red;

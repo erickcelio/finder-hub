@@ -3,7 +3,8 @@ const Colors = {
   black: '#000',
   mineShaft: '#212121',
   mirage: '#161B33',
-  malachite: '#088D3B',
+  salem: '#088D3B',
+  indigo: '#5875CC',
   pastelGreen: '#66E3A6',
   red: '#C83E3E',
 }

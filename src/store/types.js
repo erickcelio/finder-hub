@@ -4,6 +4,7 @@ export const USER_REQUEST_LOAD = `${USER}/REQUEST_LOAD`
 export const USER_REQUEST_SUCCESS = `${USER}/REQUEST_SUCCESS`
 export const USER_REQUEST_ERROR = `${USER}/REQUEST_ERROR`
 export const USER_IS_LOADING = `${USER}/IS_LOADING`
+export const USER_RESET = `${USER}/RESET`
 
 const REPOSITORIES = '@repositories'
 

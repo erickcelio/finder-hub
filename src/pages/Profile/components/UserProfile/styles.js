@@ -9,22 +9,20 @@ export const Container = styled.div`
   border-radius: 1;
   max-height: 145px;
   align-items: center;
+  background-color: transparent;
   background-color: primary;
-  &:hover {
-    background-color: primary;
-  }
 
   ${down(
     'md',
     css`
-      padding: 4 0;
-      align-items: center;
-      justify-content: center;
-      max-height: unset;
       margin: 0;
+      padding: 4 2;
       flex-wrap: wrap;
       max-width: 100%;
+      max-height: unset;
       text-align: center;
+      align-items: center;
+      justify-content: center;
     `
   )}
 `
@@ -54,7 +52,11 @@ export const UserName = styled.span`
   font-size: 3;
   margin-bottom: 2;
 `
-export const UserTag = styled.span`
+export const UserEmail = styled.span`
+  font-size: 2;
+`
+
+export const UserBio = styled.span`
   font-size: 2;
 `
 

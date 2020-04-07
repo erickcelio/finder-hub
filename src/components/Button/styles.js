@@ -11,11 +11,11 @@ export const StyledButton = styled.button`
   border-radius: 1;
   border: 1px solid;
   transition: all 0.3s;
-  border-color: malachite;
+  border-color: primary;
   background-color: transparent;
 
   &:hover {
-    background-color: malachite;
+    background-color: primary;
   }
 
   ${Dot} {

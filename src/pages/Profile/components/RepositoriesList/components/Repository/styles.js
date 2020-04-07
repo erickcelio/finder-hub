@@ -1,13 +1,35 @@
 import styled, { css } from '@xstyled/styled-components'
 import { down } from '@xstyled/system'
 
+export const RepositoryLink = styled.a`
+  padding: 0 4;
+  height: 100%;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.3s;
+  border-left: 1px solid;
+  border-color: primary;
+  justify-content: center;
+`
+
 export const Container = styled.div`
   height: 80px;
-  margin: 4 3 0 3;
   display: flex;
+  margin: 4 3 0 3;
   border-radius: 1;
-  border: 1px solid #0a8c3c;
-  background-color: #0a8c3c;
+  border: 1px solid;
+  transition: all 0.3s;
+  border-color: primary;
+
+  &:hover {
+    background-color: primary;
+
+    ${RepositoryLink} {
+      border-color: white;
+    }
+  }
 
   ${down(
     'md',
@@ -23,23 +45,6 @@ export const RepositoryInformations = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-export const RepositoryLink = styled.a`
-  transition: all 0.3s;
-  outline: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 4;
-  border-left: 1px solid;
-  border-color: white;
-  cursor: pointer;
-
-  &:hover {
-    background-color: primary;
-  }
 `
 
 export const RepositoryStatus = styled.div`
@@ -61,8 +66,12 @@ export const Status = styled.div`
 
 export const RepositoryName = styled.span`
   font-size: 2;
-  font-weight: bold;
+  max-width: 90%;
   margin-bottom: 1;
+  overflow: hidden;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `
 
 export const RepositoryDescription = styled.span`

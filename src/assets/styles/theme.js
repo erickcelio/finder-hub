@@ -5,7 +5,7 @@ const Theme = {
     ...Colors,
     background: Colors.mirage,
     text: Colors.white,
-    primary: Colors.malachite,
+    primary: Colors.indigo,
     secondary: Colors.mirage,
   },
   fontWeights: {

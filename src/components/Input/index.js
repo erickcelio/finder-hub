@@ -28,7 +28,7 @@ const Input = ({
         name={name}
         type={type}
         placeholder={placeholder}
-        autocomplete={autocomplete}
+        autoComplete={autocomplete}
       />
       <InvalidMessage show={!isValid}>{invalidMessage}</InvalidMessage>
     </InputContainer>

@@ -6,7 +6,7 @@ import {
   userHasErrorSelector,
   userHasLoadedWithSuccessSelector,
 } from 'store/modules/user/selectors'
-import Colors from 'assets/styles/colors'
+import Theme from 'assets/styles/theme'
 
 export const Container = styled.div`
   z-index: -1;
@@ -22,7 +22,7 @@ export const Container = styled.div`
   polygon {
     fill: background;
     stroke-width: 0.1;
-    stroke: ${Colors.black};
+    stroke: ${Theme.colors.black};
     animation-duration: 3s;
 
     ${(props) =>
@@ -36,6 +36,7 @@ export const Container = styled.div`
       props.animateSuccess &&
       css`
         animation-name: blink-success;
+        animation-iteration-count: infinite;
         animation-play-state: running;
       `}
   }
@@ -46,7 +47,7 @@ export const Container = styled.div`
     }
 
     50% {
-      stroke: ${Colors.red};
+      stroke: ${Theme.colors.red};
     }
 
     100% {
@@ -60,7 +61,7 @@ export const Container = styled.div`
     }
 
     50% {
-      stroke: ${Colors.malachite};
+      stroke: ${Theme.colors.primary};
     }
 
     0% {

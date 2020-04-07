@@ -27,3 +27,29 @@ export const Container = styled.div`
     `
   )}
 `
+
+export const Header = styled.div`
+  width: 100%;
+  display: flex;
+  max-width: 700px;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+
+  ${down(
+    'md',
+    css`
+      align-items: center;
+
+      #logo {
+        width: 200px;
+      }
+    `
+  )}
+
+  #arrow-back {
+    left: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+`

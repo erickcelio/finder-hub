@@ -3,6 +3,7 @@ import {
   USER_IS_LOADING,
   USER_REQUEST_ERROR,
   USER_REQUEST_LOAD,
+  USER_RESET,
 } from 'store/types'
 
 export const userRequestLoadAction = ({ username }) => ({
@@ -22,4 +23,8 @@ export const userIsLoadingAction = () => ({
 export const userRequestErrorAction = (error) => ({
   error,
   type: USER_REQUEST_ERROR,
+})
+
+export const userResetAction = () => ({
+  type: USER_RESET,
 })

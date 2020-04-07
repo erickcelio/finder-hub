@@ -3,6 +3,7 @@ import {
   USER_REQUEST_SUCCESS,
   USER_IS_LOADING,
   USER_REQUEST_ERROR,
+  USER_RESET,
 } from 'store/types'
 
 export const initialState = {
@@ -35,6 +36,9 @@ export default (state = initialState, action) => {
         draft.data = {}
         draft.error = action.error
       })
+
+    case USER_RESET:
+      return initialState
 
     default:
       return state
