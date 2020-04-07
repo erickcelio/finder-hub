@@ -27,10 +27,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv ./build ./finder-hub",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "now ./finder-hub --no-clipboard --token=$NOW_TOKEN --public --confirm --prod",
     "cypress:run": "cypress run",
     "ci:cypress-run": "npm run cypress:run"
   },

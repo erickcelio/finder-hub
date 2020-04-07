@@ -22,4 +22,3 @@ before_script:
 script:
   - npm run ci:cypress-run
   - npm test
-  - npm run deploy
