@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "now ./build --no-clipboard --token=$NOW_TOKEN --public --confirm",
+    "deploy": "now ./build --no-clipboard --token=$NOW_TOKEN --public --confirm --prod",
     "cypress:run": "cypress run",
     "ci:cypress-run": "npm run cypress:run"
   },
