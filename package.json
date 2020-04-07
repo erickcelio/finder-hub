@@ -10,6 +10,8 @@
     "@xstyled/styled-components": "^1.17.0",
     "@xstyled/system": "^1.17.0",
     "axios": "^0.19.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "history": "^4.10.1",
     "immer": "^6.0.3",
     "now": "^17.1.1",
