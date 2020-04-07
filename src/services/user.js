@@ -10,9 +10,8 @@ export const getUserByUsernameService = async (username) => {
       message: 'Ocorreu um erro por favor tente novamente!',
     }
 
-    switch (e.response.status) {
-      case 404:
-        error.message = 'Usuário não encontrado!'
+    if (e.response.status === 404) {
+      error.message = 'Usuário não encontrado!'
     }
 
     throw error

@@ -32,7 +32,7 @@ const UserForm = ({ onSubmit }) => {
         },
       ])
     }
-  }, [userHasError])
+  }, [userHasError, userError.message, setError])
 
   return (
     <>

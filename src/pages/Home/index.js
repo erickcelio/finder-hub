@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(userResetAction())
-  }, [])
+  }, [dispatch])
 
   return (
     <Container>
