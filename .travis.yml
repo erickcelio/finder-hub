@@ -16,8 +16,10 @@ install:
   - npm install
 
 before_script:
+  - npm run build
   - npm start -- --silent &
 
 script:
   - npm run ci:cypress-run
   - npm test
+  - npm run deploy

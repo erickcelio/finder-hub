@@ -12,6 +12,7 @@
     "axios": "^0.19.2",
     "history": "^4.10.1",
     "immer": "^6.0.3",
+    "now": "^17.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.3.1",
@@ -29,8 +30,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "now ./build --no-clipboard --token=$NOW_TOKEN --public --confirm",
     "cypress:run": "cypress run",
-    "ci:cypress-run": "start-server-and-test start http://localhost:3000 cypress:run"
+    "ci:cypress-run": "npm run cypress:run"
   },
   "eslintConfig": {
     "extends": "react-app"
