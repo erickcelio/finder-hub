@@ -3,7 +3,6 @@ import { down } from '@xstyled/system'
 
 export const RepositoryLink = styled.a`
   padding: 0 4;
-  height: 100%;
   outline: none;
   display: flex;
   cursor: pointer;
@@ -15,7 +14,7 @@ export const RepositoryLink = styled.a`
 `
 
 export const Container = styled.div`
-  height: 80px;
+  padding: 4;
   display: flex;
   margin: 4 3 0 3;
   border-radius: 1;
@@ -35,6 +34,7 @@ export const Container = styled.div`
     'md',
     css`
       margin: 4 0 0 0;
+      padding: 4 2;
     `
   )}
 `

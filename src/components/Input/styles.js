@@ -36,14 +36,14 @@ export const StyledInput = styled.input`
 `
 
 export const InvalidMessage = styled.span`
-  transition: all 0.6s;
+  left: 8px;
   opacity: 0;
   color: red;
   font-size: 1;
   margin-top: 1;
-  position: absolute;
-  left: 8px;
   bottom: -22px;
+  position: absolute;
+  transition: all 0.6s;
 
   ${(props) =>
     props.show &&

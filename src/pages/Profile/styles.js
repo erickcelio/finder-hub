@@ -8,18 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  #logo {
-    margin-top: 6;
-
-    ${down(
-      'md',
-      css`
-        margin-bottom: 4;
-        margin-top: 2;
-      `
-    )}
-  }
-
   ${down(
     'md',
     css`
@@ -36,6 +24,24 @@ export const Header = styled.div`
   align-items: flex-end;
   justify-content: center;
 
+  #logo {
+    margin-top: 6;
+
+    ${down(
+      'md',
+      css`
+        margin-top: 2;
+        margin-bottom: 4;
+      `
+    )}
+  }
+
+  #arrow-back {
+    left: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+
   ${down(
     'md',
     css`
@@ -46,10 +52,4 @@ export const Header = styled.div`
       }
     `
   )}
-
-  #arrow-back {
-    left: 0;
-    cursor: pointer;
-    position: absolute;
-  }
 `

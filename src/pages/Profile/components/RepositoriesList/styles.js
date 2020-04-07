@@ -2,33 +2,33 @@ import styled, { css } from '@xstyled/styled-components'
 import { down } from '@xstyled/system'
 
 export const Container = styled.div`
-  padding: 3 6;
-  max-height: 100%;
-  width: 700px;
+  flex: 1;
   margin: 6 0;
+  padding: 3 6;
+  width: 700px;
+  display: flex;
+  max-height: 100%;
   border-radius: 1;
   border: 1px solid;
-  border-color: primary;
-  background-color: background;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  flex: 1;
+  border-color: primary;
+  flex-direction: column;
+  background-color: background;
 
   ${down(
     'md',
     css`
+      padding: 3;
       width: 100%;
       margin: 6 0;
-      padding: 3;
     `
   )}
 `
 
 export const Title = styled.span`
-  font-weight: bold;
-  margin-bottom: 2;
   font-size: 3;
+  margin-bottom: 2;
+  font-weight: bold;
 
   ${down(
     'md',
@@ -40,6 +40,6 @@ export const Title = styled.span`
 
 export const RepositoriesContainer = styled.div`
   width: 100%;
-  max-height: -webkit-fill-available;
+  flex: 1 1 0;
   overflow: auto;
 `

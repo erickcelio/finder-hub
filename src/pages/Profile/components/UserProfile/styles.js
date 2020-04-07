@@ -9,7 +9,6 @@ export const Container = styled.div`
   border-radius: 1;
   max-height: 145px;
   align-items: center;
-  background-color: transparent;
   background-color: primary;
 
   ${down(

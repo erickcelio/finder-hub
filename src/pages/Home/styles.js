@@ -16,8 +16,8 @@ export const FormContainer = styled.div`
   border-radius: 1;
   border: 1px solid;
   align-items: center;
-  flex-direction: column;
   border-color: primary;
+  flex-direction: column;
   background-color: rgba(22, 27, 51, 0.8);
 
   ${InputContainer} {
@@ -27,10 +27,10 @@ export const FormContainer = styled.div`
   ${down(
     'md',
     css`
+      border: none;
       padding: 9 0 0 0;
       align-self: baseline;
       background-color: transparent;
-      border: none;
     `
   )}
 `
