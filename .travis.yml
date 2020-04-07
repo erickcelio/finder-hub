@@ -14,7 +14,7 @@ cache:
 
 install:
   - npm ci
-
+  
   before_script:
     - npm start -- --silent &
 script:
