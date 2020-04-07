@@ -27,10 +27,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv ./build ./finder-hub",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "now ./build --no-clipboard --token=$NOW_TOKEN --public --confirm --prod",
+    "deploy": "now ./finder-hub --no-clipboard --token=$NOW_TOKEN --public --confirm --prod",
     "cypress:run": "cypress run",
     "ci:cypress-run": "npm run cypress:run"
   },
